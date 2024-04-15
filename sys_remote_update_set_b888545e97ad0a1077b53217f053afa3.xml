@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2024-04-15 19:35:19">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>This is for testing purpose.</description>
+<inserted/>
+<name>Development</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>619d2304974d021077b53217f053afb5</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2024-04-15 19:35:18</sys_created_on>
+<sys_id>b888545e97ad0a1077b53217f053afa3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2024-04-15 19:35:18</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_include_e7c8b30a97a33110db1d7c9fe153afb8</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;global.gemini_pro_vision&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;gemini_pro_vision&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var gemini_pro_vision = Class.create();
+gemini_pro_vision.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    getResponse: function() {
+		var output;
+        try {
+            var r = new sn_ws.RESTMessageV2('Gemini Pro Vision', 'Pro Vision');
+            r.setStringParameterNoEscape('text', this.getParameter('sysparm_u_enter_your_text'));
+            r.setStringParameterNoEscape('data',this.getParameter('sysparm_u_please_upload_your_image'));
+            var response = r.execute();
+            var responseBody = response.getBody();
+            var httpStatus = response.getStatusCode();
+			output = responseBody;
+        } catch (ex) {
+            var message = ex.message;
+        }
+		return output;
+    },
+
+    type: 'gemini_pro_vision'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-01-07 07:15:41&lt;/sys_created_on&gt;&lt;sys_id&gt;e7c8b30a97a33110db1d7c9fe153afb8&lt;/sys_id&gt;&lt;sys_mod_count&gt;20&lt;/sys_mod_count&gt;&lt;sys_name&gt;gemini_pro_vision&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_e7c8b30a97a33110db1d7c9fe153afb8&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-03-15 07:00:36&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1742876603</payload_hash>
+<remote_update_set display_value="Development">b888545e97ad0a1077b53217f053afa3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2024-04-15 19:35:18</sys_created_on>
+<sys_id>3c88545e97ad0a1077b53217f053afa4</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18e4296004f0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2024-04-15 19:35:18</sys_updated_on>
+<table/>
+<target_name>gemini_pro_vision</target_name>
+<type>Script Include</type>
+<update_domain>global</update_domain>
+<update_guid>ab72428098010210932cf079cbae645f</update_guid>
+<update_guid_history>ab72428098010210932cf079cbae645f:1742876603,5ec6a6242dc8c610fe757c0621ded82c:1149694630,ee2f5e60a388c610ace44114e6485934:615996930,bc17b6237ba73d10a13924799ac7d14f:1149694630,e907762707a73d10b267a26b4280d4b9:-1493780686,e1e6baa385a73d1080d9f1d3181e254b:-992969179,44a67627c8a73d108b518b61862022ae:-1266258009,a88de2ab14273d10d0ee1081e4628cda:1149694630,af3b66ab29273d10ac885970dfd58389:385580388,5b9a6e6b33273d10e719a1200fc0d8d5:-1266258009,423a2a2b0b273d10cc02df9ed5814cad:1963602645,cee9262b9e273d1057f5b3bc346a8e22:-1266258009,5f4966a7d3273d1069db256d21cf574d:1521105535,f35a0d2fe6e7f91001a1987235230d23:-721641825,1e848dafdba7f910f2aa564afd1f4470:-396397327,a97449efa7a7f91039fe673a77c8c693:-721641825,3854cde7a167f9101515bd25f46e79ea:-396397327,4c06b023a967f91067df9c933771bfc8:-721641825,8641bc270d27f9109ccc8dda729c3336:-287684632,5f0df7c6b9a3311003e8918e23d3434c:-721641825,a1d9778aaaa33110020b8d9a47c85d16:318748991</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_include_8993cf8997f37950db1d7c9fe153af17</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;global.BigEncoder64&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;BigEncoder64&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var BigEncoder64 = Class.create();
+
+BigEncoder64.prototype = {
+	initialize: function() {
+    },
+    // This script will help to conver the image into base64 encoded string.
+	GetBase64EncodedString: function(attachment_sys_id) {
+		var StringUtil = new GlideStringUtil();
+		var gsis = GlideSysAttachmentInputStream(attachment_sys_id);
+		var baos = new Packages.java.io.ByteArrayOutputStream();
+		gsis.writeTo(baos);
+		baos.close();
+		var base64Data = StringUtil.base64Encode(baos.toByteArray());
+		return base64Data;	
+	},
+
+	type: 'BigEncoder64'
+};
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-01-16 11:01:01&lt;/sys_created_on&gt;&lt;sys_id&gt;8993cf8997f37950db1d7c9fe153af17&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;BigEncoder64&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_8993cf8997f37950db1d7c9fe153af17&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-03-15 07:06:31&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+<payload_hash>392698007</payload_hash>
+<remote_update_set display_value="Development">b888545e97ad0a1077b53217f053afa3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2024-04-15 19:35:18</sys_created_on>
+<sys_id>7888545e97ad0a1077b53217f053afa4</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18e429600610000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2024-04-15 19:35:18</sys_updated_on>
+<table/>
+<target_name>BigEncoder64</target_name>
+<type>Script Include</type>
+<update_domain>global</update_domain>
+<update_guid>1ad302c85cc10210cd31d8fd5bc29ca1</update_guid>
+<update_guid_history>1ad302c85cc10210cd31d8fd5bc29ca1:392698007,0517cfc936f379507f239b42dc6a41bc:32169519,d4454b8d86f37950a0d4a6415f104c28:771438857,ceb30f49c8f379503c152d59b7e4e028:-1640071273</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_action_f35df34297e33110db1d7c9fe153afe8</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_action"&gt;&lt;sys_ui_action action="INSERT_OR_UPDATE"&gt;&lt;action_name&gt;test&lt;/action_name&gt;&lt;active&gt;true&lt;/active&gt;&lt;client&gt;true&lt;/client&gt;&lt;client_script_v2&gt;&lt;![CDATA[function onClick(g_form) {
+
+}]]&gt;&lt;/client_script_v2&gt;&lt;comments/&gt;&lt;condition/&gt;&lt;form_action&gt;true&lt;/form_action&gt;&lt;form_button&gt;true&lt;/form_button&gt;&lt;form_button_v2&gt;false&lt;/form_button_v2&gt;&lt;form_context_menu&gt;false&lt;/form_context_menu&gt;&lt;form_link&gt;false&lt;/form_link&gt;&lt;form_menu_button_v2&gt;false&lt;/form_menu_button_v2&gt;&lt;form_style&gt;primary&lt;/form_style&gt;&lt;format_for_configurable_workspace&gt;false&lt;/format_for_configurable_workspace&gt;&lt;hint/&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;list_action&gt;false&lt;/list_action&gt;&lt;list_banner_button&gt;false&lt;/list_banner_button&gt;&lt;list_button&gt;false&lt;/list_button&gt;&lt;list_choice&gt;false&lt;/list_choice&gt;&lt;list_context_menu&gt;false&lt;/list_context_menu&gt;&lt;list_link&gt;false&lt;/list_link&gt;&lt;list_save_with_form_button&gt;false&lt;/list_save_with_form_button&gt;&lt;list_style/&gt;&lt;messages/&gt;&lt;name&gt;Answer&lt;/name&gt;&lt;onclick&gt;getResponse();&lt;/onclick&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[function getResponse() {
+   // Used to get the response from Gemini Pro Vision Model.
+    // var img1 = g_form.getValue("u_please_upload_your_image").toString();
+    // var base64 =  GlideStringUtil.base64Encode(img1);
+    // var image = g_scratchpad.test1;
+    // alert(g_scratchpad.SysId);
+	g_form.setValue('u_output', 'Please Wait, ⏳loading your response');
+    var ga = new GlideAjax('gemini_pro_vision');
+    ga.addParam('sysparm_name', 'getResponse');
+    ga.addParam('sysparm_u_enter_your_text', g_form.getValue("u_enter_your_text"));
+    // alert(image);
+    ga.addParam('sysparm_u_please_upload_your_image', g_scratchpad.SysId);
+    // ga.getXML(callback);
+
+    ga.getXMLAnswer(function(response) {
+        var answer = JSON.parse(response);
+        var value = answer.candidates[0].content.parts[0].text;
+        // alert(value);
+        g_form.setValue('u_output', value);
+    });
+
+    // var fileInput = g_form.getControl('u_please_upload_your_image'); // Replace 'attachment' with the actual name of your file attachment field
+    // var file = fileInput.files[0];
+    // if (file) {
+    //     var reader = new FileReader();
+
+    //     reader.onload = function (e) {
+    // e.target.result contains the base64-encoded image data
+    // var base64Image = e.target.result;
+    // gs.addInfoMessage("Test is "+base64Image);
+
+    // Make an Ajax call to the server
+    // alert('Test');
+    // var ga = new GlideAjax('gemini_pro_vision'); // Replace 'YourAjaxScript' with the actual name of your server-side script
+    // ga.addParam('sysparm_name', 'getResponse'); // Replace 'yourFunctionName' with the actual function you want to call
+    // ga.addParam('sysparm_u_enter_your_text',g_form.getValue('u_enter_your_text'));
+    // ga.addParam('sysparm_u_please_upload_your_image', base64Image); // Pass the base64-encoded image as a parameter
+
+    // ga.getXMLAnswer(function(response) {
+    //     // Handle the response from the server here
+    //     alert('Ajax call response: ' + response);
+
+    //     // You can perform additional client-side actions based on the response
+    // });
+    //     };
+
+    //     reader.readAsDataURL(file);
+    // } else {
+    //     alert('No file selected.');
+    // }
+
+}]]&gt;&lt;/script&gt;&lt;show_insert&gt;true&lt;/show_insert&gt;&lt;show_multiple_update&gt;false&lt;/show_multiple_update&gt;&lt;show_query&gt;false&lt;/show_query&gt;&lt;show_update&gt;true&lt;/show_update&gt;&lt;sys_class_name&gt;sys_ui_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-01-07 07:42:47&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;f35df34297e33110db1d7c9fe153afe8&lt;/sys_id&gt;&lt;sys_mod_count&gt;135&lt;/sys_mod_count&gt;&lt;sys_name&gt;Answer&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_action_f35df34297e33110db1d7c9fe153afe8&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-03-15 07:13:32&lt;/sys_updated_on&gt;&lt;table&gt;u_gemini_pro_vision&lt;/table&gt;&lt;ui11_compatible&gt;true&lt;/ui11_compatible&gt;&lt;ui16_compatible&gt;false&lt;/ui16_compatible&gt;&lt;/sys_ui_action&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1512124780</payload_hash>
+<remote_update_set display_value="Development">b888545e97ad0a1077b53217f053afa3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2024-04-15 19:35:18</sys_created_on>
+<sys_id>b088545e97ad0a1077b53217f053afa5</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18e4296007c0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2024-04-15 19:35:18</sys_updated_on>
+<table>u_gemini_pro_vision</table>
+<target_name>Answer</target_name>
+<type>UI Action</type>
+<update_domain>global</update_domain>
+<update_guid>f4754e8cb6c10210582329edc7ec43ab</update_guid>
+<update_guid_history>f4754e8cb6c10210582329edc7ec43ab:-1512124780,9987ecd1ab73b9500ec08cb1a02be8a2:438058369,0f07a0116a73b950a0bc7940c5091343:-1144101484,b39320d91033b950e496a2b65040df12:1322481970,34836c19c033b950a10413ba60f5c9e8:-880712004,f333e4594133b9505eb6c95a6109781f:-884090148,2aa260d52a33b95026ac20b3766ab349:-1076321529,394958d15aff7950e90fef0d83ee14e5:-653071945,01f890514aff7950c3c5f74733d16380:-115218097,2ae3af81183b79501749aa6feab8243d:552076935,2caf1385c9f779501f86f3fd0adfb4c4:838882182,d16fdbc1fef77950676b57836c3c5245:-856330557,067edf45e6f77950d41e11a1f9c37eb8:650666123,531e1b0578f77950a0d175d7b4982969:-856330557,345dd381bcf77950cc1b4fdf63da1089:-992524285,80dc9f4128f77950fcd46b38f35af1f7:745021152,b36c1741faf7795022569a469dac9336:-325587109,dafbd30118f779509329e62d04b5b212:-321047454,81ebd3cda8b77950e99e0acce5866500:2057517529,3d47fec94f7379507c8d0d7cae50048e:1688589341,61e57ec5ef73795047e3820e9c87fd9a:1866342071,c4957ec513737950c9f030d91f67e6cc:-1443417669,0df47609b3737950bb92d75023f954b3:512349537,f96436096a737950792772cc2a48b0e4:-803736345,e9233a05b1737950cfc5459b676c7502:-1971826494,d9427a81c67379503d7f2efc47cbfe7e:241161223,8d6d42f4ef7bb550060b706a33ed86fa:-847607232,205dca3407bbb550dc26f813c0f27b8c:241161223,752dcab052bbb5503eb33142c06e5d1f:-265351514,93bc8ab4667bb550a8ed79b3aecb5773:-606779484,a18c42f064bbb5503595cdb8b4b6e409:-1562286497,6dc40a7c9c3bb550945cac50815d0d59:-471205559,0d440a30a57bb5500ee302ff48e6ae87:-2115731850,91618af4de3bb55088d5ba33b384b425:-1398896414,6621c6782a3bb5509fdf9e2364a7fb85:1167385051,31e08af4c33bb550b78205cb297aed3f:-1177735583,a93f71b0633bb55004f7a20c259a1773:-417457023,a0a8d97b4beb7d10b97d7c47ad80ea2e:2080878431,7418197f3fab7d10182004f7d908228e:-683442180,140851b772eb7d10cf330788544cc9fe:-747200459,030791ffe0ab7d10e62e97b2fb8ccb45:-1257029337,aad6dd7797eb7d10f12c79c0766f8def:1345931440,d7c3c363112b3d1041110877e73bacd1:-1090820535,1c8343ef6ae73d10490b856ff1294232:668960035,f06303eface73d10561359a2b3a980a6:1730043774,8a230fef92e73d10c235dabd6d406965:-1228819331,fdf2c76b63e73d10fe364cc0198bc3f3:1651561320,56c24f2bb5e73d10733e9729a270be90:77473405,09924b6b03e73d104c96516ea80a0e7f:-1150939608,fd100f2b54e73d10a65e085ab9bcdbed:-2015116958,7aef3a6771e73d10ff61f112cd278080:240644309,1baff22babe73d102efbf468f0fbc3b8:-555788773,141fbea78be73d103a20d2c568646fc7:303830141,96deb6a715e73d1080eeec71bdbcfdda:-900910409,0d9eba23b4e73d10b96cfadf4f245448:304228323,455c7223fde73d10384aa242650a377a:-827940475,cd3cf6ef1da73d10f97ee08e8e9fd621:134169975,161cf22346e73d105675d7c1408c97f1:-353283473,6ffb32235fe73d107c9546d3e3e8e50d:1691251087,2adb7ae72fa73d10afc82abd2a331172:410836552,57bbb6ef24a73d10ce0298a0b37e6c3e:320387150,802bba6f99a73d1061fa0d57e737fec3:-536697532,16ea3ae714a73d1082974bbb8c8a34b8:923548235,2f287e27b6a73d1029d7f5df2e0b30ed:2040169539,3ec6fa2374a73d10f071955917daaa8c:-1299604102,d1a672abdf673d1053ce8d0b4afcbf02:1067136350,8194baef4c673d108ed3586d496a7daa:445634516,e764b66b98673d10b88d8e7c34cdfbf7:-281671283,6282f6ab0f673d1013049a67e09a029c:1174440075,c36276eb85673d104f1eb187790f8226:1367642819,0752f22be9673d1039c1306e65c69fc5:-145230466,c722b22bb1673d1054929e755d37f828:-347907975,2c12f6ab32673d10d523b0183a20e396:1019888654,b9d13e6b7a673d10266ce7639e018425:1587118631,2eb1366bd1673d107878b28e67965082:-616777445,ab91b66b01673d10a454025789529aec:1523911568,5c81be2bf2673d10d8a2dd2e78d9ffdb:1841386853,516136e3b9673d10c77ef81d54e8c27b:919189153,c4313ee7ef673d10ac269cb02b9b3608:-2026818354,ec11fae32e673d10ffd0abda0429333c:-1110258958,4ae0fa6715673d1066ebb54f038f9ae4:-680889466,e2c0fa67ff673d10e06820abe2b3ece0:1644397594,0970fae370673d1097ca762682f15e38:-1068397406,aaffea67cc673d104ca51cb163ff56da:1457839385,0acf66e31f673d1057d164230a022071:-2052473531,3a1faae3af673d10c933faae32faa46d:-1845423954,99eee223c0673d10b40fca0f64228be3:1194959873,779da623bd673d10b423f14457925589:-769140595,b5ab66abae273d104385560703fb6d97:1669484560,ae7a2a6b0a273d107e98aa703c88ed41:-1274142907,99870da70fe7f9101971756e002e343c:1330490892,ff6709a7d7e7f910daf18a0f604afcb0:-1988651305,1c893467fb67f91096d45a3713feded0:-1361090240,7459f0674067f9109b83457df095aa43:-480696884,10c83867f067f9106ba3f9d107be78d4:1427570908,206838e36167f910ab4d925e1ce2e6e2:-883704934,556774238c67f91093c8f5099e193877:-1853583278,41373ca34f67f910825eeeccb43b4d39:-883704934,b1d4b0a76527f9100aaaca619e4ce7d5:-1756111601,0523702b3327f910c97cd382543e085d:909101350,f972b4a74427f9104348941a9a5819b1:-1756111601,061238a7c427f910c263d111e7b695e4:-1629573878,33e174e7c927f910a588657395212cc9:-1756111601,5ddf4c1e2c6731106d154e95c597b2a8:339275246,65af841edb673110c82aaec36e0202d9:303073835,304f409a466731101a8b9252ecee46fc:1284229035,599ecc5acc673110b7ce722b1f3fcc82:-1629573878,0efd081a5d673110a9ea73d97f7a9647:1542756134,506b4c524b673110dff8938fa2990c83:1461645494,3e2b4c52686731101065fee6b1ce71c0:599734727,21ea445211673110cb07dfb92f2950d2:138585366,eaca4452856731107792046a9beca74f:-183350036,8faac49e8a2731108265d7f4eabe6634:606225488,589ac49e3a273110194e5e1501e50561:-50422022,646a8cde772731102ca05ecbef141684:-1692199755,0d3accdeae2731102f8c93442291714a:-875265997,6d1a8cdea6273110087466fded0f1d7e:1236969074,6bc9cc9ebe273110b80b40316baa7800:1960009820,6ca9009ef5273110ffe30c37c4ad5cd2:1461141195,d369849ede27311079e2d13941624f01:-14373148,5229405e4d2731106f4aea9f577167b7:978247003,69d8485aa62731108888b1fd39c9c0a9:-233498489,790548d2482731101962d5af51563d88:-19963554,375408526e2731102e49588d6c6bce21:-2070112516,6ad3c012e82731103e098b8bc7d3c9b5:1527819310,3a828c9a06e33110a74dabf5382d9b67:-1110490680,3252cc5a72e3311032dda9c0c51a0f43:2081614144,4e918c9ad6e33110054b9057fdd80371:1659714164,8651401642e33110d7309e395021f0a5:-1697743383,6431849ae9e331106cab62715886e39e:-1955478412,23f0cc5a70e331102815b1a36826a43a:-1712517012,eab0001a50e33110f0e8bf614245340f:-2039980309,9c90041ab6e33110fbeec0c6c2952e02:-556461631,5a60c01a16e33110ec1c232144f62dfd:-1525768831,7330401659e33110863c04ead2f91499:37291094,2e000cd6abe3311047aaefb1694e7f0f:-511644895</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_include_4ed50b3d97ef3d10db1d7c9fe153af96</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;global.gemini_pro&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;gemini_pro&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var gemini_pro = Class.create();
+gemini_pro.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    demoTest: function() {
+        var output;
+		try {
+            var r = new sn_ws.RESTMessageV2('Gemini Pro model', 'gemini pro');
+            r.setStringParameterNoEscape('text', this.getParameter('sysparm_text')); // To get the evalue of entered text.
+            var response = r.execute();
+            var responseBody = response.getBody();
+            var httpStatus = response.getStatusCode();
+			output = responseBody;
+        }
+        catch (ex) {
+            var message = ex.message;
+        }
+        return output;
+    },
+
+    type: 'gemini_pro'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-01-06 09:03:07&lt;/sys_created_on&gt;&lt;sys_id&gt;4ed50b3d97ef3d10db1d7c9fe153af96&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;gemini_pro&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_4ed50b3d97ef3d10db1d7c9fe153af96&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-03-15 07:07:21&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-627408261</payload_hash>
+<remote_update_set display_value="Development">b888545e97ad0a1077b53217f053afa3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2024-04-15 19:35:18</sys_created_on>
+<sys_id>b488545e97ad0a1077b53217f053afa4</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18e429600670000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2024-04-15 19:35:18</sys_updated_on>
+<table/>
+<target_name>gemini_pro</target_name>
+<type>Script Include</type>
+<update_domain>global</update_domain>
+<update_guid>5e044e887bc102108c1aac9e722e49ab</update_guid>
+<update_guid_history>5e044e887bc102108c1aac9e722e49ab:-627408261,48ee87b5b1237d10e82b6ccae2d33da7:2053701344,e5de4f3da0237d1041b606c4641ef7bc:-1167325546,6ed847f17f237d10cd6e55d971c6d01a:2053701344</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_script_8a46849697273110db1d7c9fe153afbd</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;false&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;u_gemini_pro_vision&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition table="u_gemini_pro_vision"&gt;u_please_upload_your_imageANYTHING^EQ&lt;item endquery="false" field="u_please_upload_your_image" goto="false" newquery="false" operator="ANYTHING" or="false" value=""/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/filter_condition&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;Correct Base64 conversion code&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    // g_scratchpad.test1 = toto.GetBase64EncodedString(id);
+	var Id = current.sys_id;
+    var attachmentGR = new GlideRecord('sys_attachment');// To get the sys_id of current record.
+    attachmentGR.addQuery('table_name', 'ZZ_YYu_gemini_pro_vision');
+    attachmentGR.addQuery('table_sys_id', Id);
+    attachmentGR.query();
+    if (attachmentGR.next()) {
+        var attachmentSysId = attachmentGR.getValue('sys_id');
+        var toto = new global.BigEncoder64();
+        // gs.log("Total Sys_id is " + toto.GetBase64EncodedString(attachmentSysId));
+        g_scratchpad.SysId = toto.GetBase64EncodedString(attachmentSysId);
+
+    }
+
+
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-01-07 08:12:03&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;8a46849697273110db1d7c9fe153afbd&lt;/sys_id&gt;&lt;sys_mod_count&gt;36&lt;/sys_mod_count&gt;&lt;sys_name&gt;Correct Base64 conversion code&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_8a46849697273110db1d7c9fe153afbd&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-03-15 07:10:21&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before_display&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=8a46849697273110db1d7c9fe153afbd"/&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-45848265</payload_hash>
+<remote_update_set display_value="Development">b888545e97ad0a1077b53217f053afa3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2024-04-15 19:35:18</sys_created_on>
+<sys_id>bc88545e97ad0a1077b53217f053afa3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18e4296006e0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2024-04-15 19:35:18</sys_updated_on>
+<table>u_gemini_pro_vision</table>
+<target_name>Correct Base64 conversion code</target_name>
+<type>Business Rule</type>
+<update_domain>global</update_domain>
+<update_guid>22b44a0c1fc10210e7b122cbe66c006f</update_guid>
+<update_guid_history>22b44a0c1fc10210e7b122cbe66c006f:-45848265,38f2e459b633b9505e91e05bf0ac1518:1936521609,49d16095a333b950d2f8e5a2d5f6184a:-1307499957,0c616c552333b9501ea407cc8616b0dd:355426011,b17068d1fd33b950cf72e69dfaec0c1b:-639477391,fa206c917233b95072ab63914400a57c:440164017,90ff54911e33b9502c527c2bea6fae18:-2027939970,e5af50912d33b950d83516ef523b87ea:344349955,f49f5cdd85ff795031d1df4a78f6ba84:-1777062819,835f58dd97ff79505687621da2ef7ff3:845806354,f8aed45d7bff7950cb60e67a3fdd8f41:195950092,c02e545d68ff7950e354aa9e0cfc209e:1764321875,e37dd0d96eff79508d84d05a773389b0:482755104,834c989928ff79503e7ef075c25357ca:566705262,145b1819beff795028082511c45eb7d3:-583534199,422b9855a8ff79507eaa8566ae94a39a:-1221172477,386a189520ff7950b20aea216b54b684:-1666863590,68f9d4d133ff7950c351e62c11fd6348:-1136852160,75995c15ecff7950eff83a3821772210:-165639034,a1c894516cff7950197548d26f063bc5:2077108326,9febd3cd91b7795090922af35b695fcb:1184694428,32bb5bcd43b779501b4037cceebafa98:1256016005,5a8b17c940b77950059c702c1f2a857f:-635884594,d4ee43c12f77795030821ef385c4829b:-1251626639,c57e4f410377795048236ca71a2ebffc:-940786347,6b3e8f415d777950b10d1754f80ee34e:-924735193,6fddc74161777950ce8cb01f5f3f2e59:-1772167222,d56dc701cb777950e1a4a2ab961f6407:1566972712,e60d07cd29377950bd4788cfe3a4e2c4:-95629316,cbcc074db43779505cccf288a1a98a6e:1223659051,5f0c074d343779504d5a818b9f0ff466:454815278,822bc7853f377950234556aaebe0e4a6:1520707689,679a43457a377950c376be7f3c1f0f5b:-1049847963,892ac3c5e7377950519f303cb351a6f8:1545102207,6ed90b8d71f37950f04a86114f2ffc73:2144834262,b457489650273110093a35d499ab63be:-1338490522,c3b68c56c827311052a0492c563fb3d3:-274742178</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_action_2a19033597237d10db1d7c9fe153af24</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_ui_action"&gt;&lt;sys_ui_action action="INSERT_OR_UPDATE"&gt;&lt;action_name&gt;test&lt;/action_name&gt;&lt;active&gt;true&lt;/active&gt;&lt;client&gt;true&lt;/client&gt;&lt;client_script_v2&gt;&lt;![CDATA[function onClick(g_form) {
+
+}]]&gt;&lt;/client_script_v2&gt;&lt;comments/&gt;&lt;condition/&gt;&lt;form_action&gt;true&lt;/form_action&gt;&lt;form_button&gt;true&lt;/form_button&gt;&lt;form_button_v2&gt;false&lt;/form_button_v2&gt;&lt;form_context_menu&gt;false&lt;/form_context_menu&gt;&lt;form_link&gt;false&lt;/form_link&gt;&lt;form_menu_button_v2&gt;false&lt;/form_menu_button_v2&gt;&lt;form_style&gt;primary&lt;/form_style&gt;&lt;format_for_configurable_workspace&gt;false&lt;/format_for_configurable_workspace&gt;&lt;hint/&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;list_action&gt;false&lt;/list_action&gt;&lt;list_banner_button&gt;false&lt;/list_banner_button&gt;&lt;list_button&gt;false&lt;/list_button&gt;&lt;list_choice&gt;false&lt;/list_choice&gt;&lt;list_context_menu&gt;false&lt;/list_context_menu&gt;&lt;list_link&gt;false&lt;/list_link&gt;&lt;list_save_with_form_button&gt;false&lt;/list_save_with_form_button&gt;&lt;list_style/&gt;&lt;messages/&gt;&lt;name&gt;GetResponse&lt;/name&gt;&lt;onclick&gt;getResponse();&lt;/onclick&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[function getResponse() {
+
+	// Use to get the response for gemini pro model.
+    // var input = g_form.getValue('u_text');
+    // if (input != "") {
+    //     g_form.addInfoMessage('Your respons is loading!!!');
+    //     //g_form.setValue('u_output', 'Loading');
+    // 	g_form.addInforMessage('Test');
+    //     var ga = new GlideAjax('gemini_pro');
+    //     ga.addParam('sysparm_name', 'demoTest');
+    //     ga.addParam('sysparm_text', input);
+    // 	// ga.addParam('sysparm_u_please_upload_your_image',g_form.getValue('u_please_upload_you_image'));
+    //     ga.getXMLAnswer(function(data) {
+    //         var response = JSON.parse(data);
+    // 		alert(response);
+    //         g_form.setValue('u_output', response.parts[0].text.trim());
+    //         GlideUI.get().clearOutputMessage();
+    //     });
+    // } else {
+    //     g_form.addErrorMessage('Text should not be empty');
+    // }
+    var text = g_form.getValue("u_text");
+    if (text != '') {
+        g_form.setValue('u_output', 'Please Wait, ⏳loading your response');
+        var ga = new GlideAjax('gemini_pro');
+        ga.addParam('sysparm_name', 'demoTest');
+        ga.addParam('sysparm_text', g_form.getValue('u_text'));
+        ga.getXMLAnswer(function(response) {
+            var answer = JSON.parse(response);
+            var value = answer.candidates[0].content.parts[0].text;
+            //alert(value);
+            g_form.setValue('u_output', value);
+        });
+    } else {
+        g_form.addErrorMessage("Question field should not be empty");
+    }
+    // function callback(response){
+    // 	var answer = response.responseXML.documentElement.getAttribute('answer');
+    // 	// var response1 = answer.candidates[0].content.parts[0].text;
+}]]&gt;&lt;/script&gt;&lt;show_insert&gt;true&lt;/show_insert&gt;&lt;show_multiple_update&gt;false&lt;/show_multiple_update&gt;&lt;show_query&gt;false&lt;/show_query&gt;&lt;show_update&gt;true&lt;/show_update&gt;&lt;sys_class_name&gt;sys_ui_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-01-06 09:07:52&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;2a19033597237d10db1d7c9fe153af24&lt;/sys_id&gt;&lt;sys_mod_count&gt;30&lt;/sys_mod_count&gt;&lt;sys_name&gt;GetResponse&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_action_2a19033597237d10db1d7c9fe153af24&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-03-15 07:12:43&lt;/sys_updated_on&gt;&lt;table&gt;u_gemini_pro&lt;/table&gt;&lt;ui11_compatible&gt;true&lt;/ui11_compatible&gt;&lt;ui16_compatible&gt;false&lt;/ui16_compatible&gt;&lt;/sys_ui_action&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1765083135</payload_hash>
+<remote_update_set display_value="Development">b888545e97ad0a1077b53217f053afa3</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2024-04-15 19:35:18</sys_created_on>
+<sys_id>fc88545e97ad0a1077b53217f053afa4</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>18e429600750000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2024-04-15 19:35:18</sys_updated_on>
+<table>u_gemini_pro</table>
+<target_name>GetResponse</target_name>
+<type>UI Action</type>
+<update_domain>global</update_domain>
+<update_guid>89450e4c50c10210901d9ce0be8f98da</update_guid>
+<update_guid_history>89450e4c50c10210901d9ce0be8f98da:-1765083135,14254ac85cc10210b406f9b7668e1af2:-2019003794,f6d4320cf17b31501c6b4357af5cc475:-1716483571,dee2bec49b7b3150d10b59377a3c6747:2121739522,64ce91f7bd2f7d10087df14c32b6cc0d:81642028,932e9d37622f7d10564736bc46d62eb5:-1897967113,98fd9d372e2f7d1089a3c7e4fc2a7665:-671062198,cfadd177ac2f7d1098f8979916b80dea:-1062452265,b3acd9ff97eb7d10bf30ff8c88ab8a6b:-105964939,547c95b36b2f7d1081d3fecd8bb527be:1211061966,bcebd1736f2f7d104e22b5c88031d85a:-1757717702,2bab55336a2f7d1028dfa911d6ca335e:-1028092076,087b91fff8eb7d10d6ef5339321a6e4c:-1678044032,7b2b99ff22eb7d10441b2a247b02d279:1655012364,f7ea913f4eeb7d102431905cf48d0d8a:-1221041336,198a117f07eb7d1091398ea08f4fd807:-455632493,2ae9113f53eb7d109772c60bc39d2724:-469380616,17d448527c273110619a1452d8a7f53e:1244186706,6df2177985637d1085ab9c9b93fe736c:542681604,5ec2d379bf637d10a3f0cf4ccdfc698b:-986718812,bd8297b57b637d1014c758705843d514:-1856741636,fb525b751c637d102c288c3272abc922:-1767288040,87229bf122637d1006d6f8427230fec2:-1622983427,4dfec7f9c0237d10437d3ec470a6e63e:-685780689,392ec3794b237d1041247fa56ae5f4a2:-1181023131,102d4fbd8def3d106f746245c2f0055f:545309283,34fc07b57c237d10cfdefe69f62a2bd8:396899694,498cc7f965237d104f0e440ef3c3be36:1063439332,ab9b4f39c8237d10abc1b909335601bf:150051214,c21a433583237d1000c6ce017d8f1995:-302033513,d3e943356c237d10267e14cd91e0dd90:-62170129</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
